@@ -146,7 +146,7 @@ def publicar():
         return jsonify({"erro": f"Projeto {grupo} não encontrado"}), 404
 
     arquivos = sorted([f for f in os.listdir(grupo_path) if f.endswith(".mp4")])
-    base_url = request.host_url.rstrip("/")
+    base_url = os.getenv("SERVER_URL", request.host_url.rstrip("/"))
 
     for tv_id, parte in tv_config.items():
         if parte < 1 or parte > len(arquivos):
