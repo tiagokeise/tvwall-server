@@ -1,0 +1,125 @@
+<!-- Modal: Upload de Projeto -->
+<div class="modal fade" id="uploadModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Enviar Projeto (grupo de vídeos)</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-start">
+        <div class="mb-3">
+          <label class="form-label">Nome do Projeto</label>
+          <input type="text" id="inputNomeProjeto" class="form-control bg-secondary text-white" required pattern="[a-zA-Z0-9_]+" placeholder="Ex: artegov">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Selecione os vídeos</label>
+          <input type="file" id="inputArquivosProjeto" class="form-control bg-secondary text-white" multiple accept="video/mp4" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button id="btnEnviarProjeto" class="btn btn-success btn-sm">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Preview de Projeto 
+<div class="modal fade" id="modalPreview" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Preview do Projeto</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="previewVideos" class="d-flex gap-3 flex-wrap justify-content-center"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+<!-- Modal: Status Inteligente -->
+<div class="modal fade" id="modalStatus" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header bg-info text-dark">
+        <h5 class="modal-title">Processando</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="statusMensagem" class="text-center">
+          <div class="spinner-border text-light mb-3"></div>
+          <p class="mb-0">Aguardando ação do servidor...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Confirmação de Exclusão -->
+<div class="modal fade" id="modalConfirmar" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title">Confirmar Ação</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="confirmarMensagem">Tem certeza?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button id="btnConfirmarOK" class="btn btn-danger btn-sm">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Sucesso -->
+<div class="modal fade" id="modalSucesso" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title">Sucesso</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="mensagemSucesso">
+        Ação concluída com êxito.
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success btn-sm" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+  <div id="toastContainer" class="toast-container"></div>
+</div>
+
+<!-- Modal: Listagem de Projetos e Status dos Players -->
+<div class="modal fade" id="modalListarProjetos" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Status dos Players e Projetos</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- STATUS PLAYERS -->
+        <h6>Status dos Players</h6>
+        <div id="statusTvs" class="mb-4 d-flex flex-wrap gap-3"></div>
+
+        <!-- LISTA PROJETOS -->
+        <h6>Projetos Disponíveis</h6>
+        <div id="listaProjetos" class="d-flex flex-column gap-3"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,153 @@
+/* Corpo escuro com tipografia clara */
+body {
+  background: linear-gradient(296.91deg, #353538 3.73%, #0c0c0c 97.68%);
+  color: #f8f9fa;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+/* Cabeçalho principal */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões principais */
+.btn {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 500;
+  padding: 1rem 2rem;
+}
+
+.btn-sm {
+  padding: 0.4rem 1rem;
+}
+
+/* Cards de projetos e status */
+.bg-secondary {
+  background-color: #444 !important;
+  border-radius: 0.5rem;
+}
+
+#statusTvs > div,
+#listaProjetos > div {
+  border: 1px solid #666;
+}
+
+/* Scroll modal mais suave */
+.modal-dialog-scrollable .modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Selects */
+select.form-select {
+  min-width: 100px;
+}
+
+/* Toasts no canto inferior direito */
+.toast-container {
+  z-index: 1060;
+}
+
+/* Spinner centralizado no modal de status */
+#modalStatus .spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Ajustes extras */
+input[type="file"] {
+  color: white;
+}
+
+.preview-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  background: #222;
+  border-radius: 0;
+  width: 90%;
+}
+
+.preview-container video {
+  border-radius: 0px;
+  object-fit: cover;
+}
+
+.video-thumb {
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #000;
+}
+
+.video-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.preview-container {
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.9);
+  transform-origin: top;
+  transition: all 0.3s ease-out;
+}
+
+.preview-container.animar-preview {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+@keyframes expandPreview {
+  from {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes collapsePreview {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0.9);
+  }
+}
+
+.preview-container.fade-out {
+  animation: collapsePreview 0.2s ease-in forwards;
+}
+
+.invisible {
+  display: block !important;
+  visibility: hidden;
+}
+
+.confirmar-exclusao {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

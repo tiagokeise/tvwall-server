@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel de Controle - Videowall</title>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div id="toastContainer" class="position-fixed top-0 end-0 mt-3 me-3" style="z-index: 9999;"></div>
+  <div class="container text-center py-5">
+    <h1 class="mb-4">Controle de Videowall</h1>
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <button id="btnListarProjetos" class="btn btn-secondary btn-lg">Listar Projetos</button>
+      <button id="btnAbrirUpload" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#uploadModal">Carregar Projeto</button>
+    </div>
+  </div>
+
+  <!-- Modais (serão incluídos manualmente no HTML ou carregados dinamicamente em /modais.html) -->
+  <div id="modaisContainer">
+    {% include 'modais.html' %}
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/axios.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
