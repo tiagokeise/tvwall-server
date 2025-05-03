@@ -68,7 +68,7 @@ Acesse o painel em: [http://localhost:5000](http://localhost:5000)
 
 ## Players
 
-Cada cliente Raspberry Pi executa um script (`player_tvwall.py`) que:
+Cada cliente Raspberry Pi ou windows, executa um script (`player_tvwall.py`) que:
 
 - Reproduz vídeos via MPV
 - Se conecta ao servidor via Socket.IO
@@ -76,5 +76,7 @@ Cada cliente Raspberry Pi executa um script (`player_tvwall.py`) que:
 - Exibe logs e responde a comandos
 
 ## Licença
+
+Desenvolvido por [Tiago Keise](https://github.com/tiagokeise) para uso em instalações com múltiplos Raspberry Pi ou windows exibindo vídeos sincronizados.
 
 MIT
